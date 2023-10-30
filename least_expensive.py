@@ -10,9 +10,13 @@ def least_expensive(file_path: str) -> str:
     Returns:
         str: least expensive item
     """
-    pass
+    f=json.loads(open(file_path).read())
+    min1=956212321252
+    for i in f.values():
+        if i<min1:
+            min1=i
+    return min1
 
 # test
 file_path = "data.json"
-least_expensive_item = least_expensive(file_path)
-print(least_expensive_item)
+print(least_expensive(file_path))

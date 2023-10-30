@@ -1,5 +1,4 @@
-import json
-
+from json import loads
 def get_data(file_path: str) -> dict:
     """
     get data from json file as dictionary
@@ -10,10 +9,8 @@ def get_data(file_path: str) -> dict:
     Returns:
         dict: dictionary of data
     """
-    pass
+    f=loads(open(file_path).read())
+    return f
+file_path='data.json'
+print(get_data(file_path))
 
-
-# test
-file_path = "data.json"
-data = get_data(file_path)
-print(data)
